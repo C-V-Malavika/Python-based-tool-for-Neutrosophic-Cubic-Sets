@@ -1,6 +1,5 @@
 class INS: # Interval neutrosophic set
 
-
     def __init__(self, T_lower = 0, T_upper = 0, I_lower = 0, I_upper = 0, F_lower = 0, F_upper = 0, *args, **kwargs):
 
         '''Initialising the elements of Interval Neutrosophic Set :-
@@ -36,7 +35,7 @@ class INS: # Interval neutrosophic set
             raise ValueError("Invalid combination of Upper - Truth, \
             Indeterminacy and Falsehood values")
 
-        #initialising
+        # Initialising
         self._T_lower = T_lower
         self._T_upper = T_upper
         self._I_lower = I_lower
@@ -60,14 +59,13 @@ class INS: # Interval neutrosophic set
     # end of the function __str__
 
 
-class NS: #Neutrosophic set
-
+class NS: # Neutrosophic set
 
     def __init__(self, truth = 0, indeterminacy = 0, falsehood = 0):
 
         '''Initialising the NS elements :- Truth, Indeterminacy, Falsehood and handling exceptions'''
 
-        #handling wrong inputs
+        # Handling wrong inputs
         if not 0 <= truth <= 1:
             raise ValueError("Invalid Truth value")
         elif not 0 <= indeterminacy <= 1:
@@ -77,7 +75,7 @@ class NS: #Neutrosophic set
         elif not 0 <= truth+indeterminacy+falsehood <= 3:
             raise ValueError("Invalid combination of Truth, Indeterminacy and Falsehood values")
 
-        #initialising
+        # Initialising
         self._T = truth
         self._I = indeterminacy
         self._F = falsehood
@@ -93,8 +91,7 @@ class NS: #Neutrosophic set
     # end of the function __str__
 
 
-class NCN(INS, NS): #Neutrosophic cubic number
-
+class NCN(INS, NS): # Neutrosophic cubic number
 
     def __init__(self, number):
 
@@ -269,8 +266,7 @@ class NCN(INS, NS): #Neutrosophic cubic number
     # end of the function certainty
 
 
-class NCS(NCN): #Neutrosophic cubic set
-
+class NCS(NCN): # Neutrosophic cubic set
 
     def __init__(self, id_set, item):
 

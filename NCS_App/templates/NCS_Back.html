@@ -1,0 +1,71 @@
+<html>
+<head>
+ <title>Neutrosophic Cubic Sets</title>
+ {% load static %}
+ <link rel = "stylesheet" href = "{% static 'NCS.css' %}"></link>
+</head>
+
+<body>
+ <div class = "titlebar">
+  <h1>Tool for Neutrosophic Cubic Sets</h1>  
+ </div>
+ <div class = "background">
+  <div class = "box1">
+   <div class = "textbox">
+   <form method="POST" action="{% url 'ncs_result' %}"><br><br>
+    {% for item in data %}
+     {% csrf_token %}
+    {% csrf_token %}
+    <h1>Enter First NCS :</h1>
+    <textarea style = "font-size: 15px" name = "commentsncs1" id = "commentsncs1" cols = "60" rows = "10">{{ item.ncs1 }}</textarea>
+   </div>
+   <div class = "textbox1">
+    <h1>Enter Second NCS or a positive scalar :</h1>
+    <textarea style = "font-size: 15px" name = "commentsncs2" id = "commentsncs2" cols = "60" rows = "10">{{ item.ncs2 }}</textarea>
+   </div>
+  </div>
+  <div class = "box2">
+   <div class = "buttonbox1">
+    <button class = "select" name="button" value = "COMPLEMENT1">COMPLEMENT</button><br><br><br>
+    <button class = "select" name="button" value = "SCORE1">SCORE</button><br><br><br>
+   </div>
+   <div class = "buttonbox1">
+    <button class = "select" name="button" value = "ACCURACY1">ACCURACY</button><br><br><br>
+    <button class = "select" name="button" value = "CERTAINTY1">CERTAINTY</button><br><br><br>
+   </div>
+   <div class = "buttonbox2">
+    <button class = "select1" name="button" value = "COMPLEMENT2">COMPLEMENT</button><br><br><br>
+    <button class = "select1" name="button" value = "SCORE2">SCORE</button><br><br><br>
+   </div>
+   <div class = "buttonbox2">
+    <button class = "select1" name="button" value = "ACCURACY2">ACCURACY</button><br><br><br>
+    <button class = "select1" name="button" value = "CERTAINTY2">CERTAINTY</button><br><br><br>
+   </div>
+   <br><br><br>
+   <div class = "buttonbox3">
+    <button class = "select2" name="button" value = "P-UNION">P-UNION</button><br><br><br>
+    <button class = "select2" name="button" value = "EQUALITY">EQUALITY</button><br><br><br>
+   </div> 
+   <div class = "buttonbox3">
+    <button class = "select2" name="button" value = "P-INTERSECTION">P-INTERSECTION</button><br><br><br>
+    <button class = "select2" name="button" value = "ADDITION">ADDITION</button><br><br><br>
+   </div>
+   <div class = "buttonbox3">
+    <button class = "select3" name="button" value = "R-UNION">R-UNION</button><br><br><br>
+    <button class = "select3" name="button" value = "MULTIPLICATION">MULTIPLICATION</button><br><br><br>
+   </div>
+   <div class = "buttonbox3">
+    <button class = "select3" name="button" value = "R-INTERSECTION">R-INTERSECTION</button><br><br><br>
+    <button class = "select3" name="button" value = "SCALAR MULTIPLICATION">SCALAR MULTIPLICATION</button><br><br><br>
+   </div>
+   <div class = "buttonbox4">
+    <button class = "select4" name="button" value = "CONTAINMENT">CONTAINMENT</button>
+   </div>
+   <div class = "textbox2">
+    <h1>Result of the operation :</h1>
+    <textarea style = "font-size: 15px" name = "comments" id = "comments" cols = "60" rows = "10" readonly = "True">{{ item.result }}</textarea>
+    {% endfor %}
+   </div>
+  </div>
+ </div>
+</body>

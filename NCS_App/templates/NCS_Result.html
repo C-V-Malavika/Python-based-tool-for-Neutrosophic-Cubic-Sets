@@ -1,0 +1,34 @@
+<html>
+<head>
+ <title>Neutrosophic Cubic Sets</title>
+ {% load static %}
+ <link rel = "stylesheet" href = "{% static 'NCS1.css' %}"></link>
+</head>
+
+<body>
+ <div class = "titlebar">
+  <h1>Tool for Neutrosophic Cubic Sets</h1>  
+ </div>
+ <div class = "background">
+  <div class = "box1">
+   <div class = "textbox">
+   <form method="POST" action="{% url 'ncs_back' %}"><br><br>
+    {% for item in data %}
+     {% csrf_token %}
+    <h1>First NCS :</h1>
+    <textarea style = "font-size: 15px" name = "commentsnc1" id = "commentsncs1" cols = "60" rows = "10" readonly = "True">{{ item.ncs1 }}</textarea>
+   </div>
+   <div class = "textbox1">
+    <h1>Second NCS or a positive scalar :</h1>
+    <textarea style = "font-size: 15px" name = "commentsncs2" id = "commentsncs2" cols = "60" rows = "10" readonly = "True">{{ item.ncs2 }}</textarea>
+   </div>
+  </div><br><br><br>
+   <div class = "textbox2">
+    <h1>Result of the operation :</h1>
+    <textarea style = "font-size: 15px" name = "comments" id = "comments" cols = "60" rows = "10" readonly = "True">{{ item.result }}</textarea>
+    {% endfor %}
+   </div>
+   <button class = "select5" name="button" value = "Back">BACK</button><br><br><br>
+  </div>
+ </div>
+</body>

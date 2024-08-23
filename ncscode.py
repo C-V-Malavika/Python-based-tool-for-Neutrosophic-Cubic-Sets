@@ -1,5 +1,3 @@
-'''The idea of this module is to perform various operations on NCS'''
-
 class INS: # Interval neutrosophic set
 
 
@@ -224,7 +222,7 @@ class NCN(INS, NS): #Neutrosophic cubic number
 
     def scalar_multiplication(self, scalar):
 
-        if not scalar>0:
+        if not scalar > 0:
             raise ValueError("The scalar number should be positive")
         else:
             return NCN([[round(1 - ((1 - self._T_lower) ** scalar), 2), 
